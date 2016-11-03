@@ -1,6 +1,7 @@
 //bitSieve.cpp
 //bitSieve.cpp
-//MOD24£ºbitÎ»Êı×é.É¸·¨
+//MOD24ï¼šbitä½æ•°ç»„.ç­›æ³•
+//BY LG
 #include <iostream>
 #include <ctime>
 #define iPRIME 8
@@ -50,8 +51,8 @@ void Sieve(int X3, unsigned char *P)
 		else 
 		{
 			m+=2, n+=6;
-			A0+=k0, k0+=24;//¼Ó²î.¶ş½×µÈ²îÊıÁĞ¶ş´Î²îÏî24
-			A1+=k1, k1+=24;//¼Ó²î.¶ş½×µÈ²îÊıÁĞ¶ş´Î²îÏî24
+			A0+=k0, k0+=24;//åŠ å·®.äºŒé˜¶ç­‰å·®æ•°åˆ—äºŒæ¬¡å·®é¡¹24
+			A1+=k1, k1+=24;//åŠ å·®.äºŒé˜¶ç­‰å·®æ•°åˆ—äºŒæ¬¡å·®é¡¹24
 		}
 		i++;
 	}
@@ -68,14 +69,14 @@ unsigned char* bitSieve(int X0)
 	if(X==1){ COUNT=0; return PSieve;}
 	if(X==2){ COUNT=1; return PSieve;}
 
-	miniCOUNT=X03;// ÉèÖÃ6n¡À1ĞÍµÄÎ±ËØÊı
+	miniCOUNT=X03;// è®¾ç½®6nÂ±1å‹çš„ä¼ªç´ æ•°
 	int X024=X03>>3;// X03/8
 	int X03m8=X03&M8;// X03%8
 	if(X03m8)X024++;
 	PSieve=new unsigned char[X024];
 	for(int r=0; r<X024; r++)PSieve[r]=base; //11111111(8)
 	Sieve(X03, PSieve);
-	PSieve[0]-=BASE[0];//ÅÅ³ı1
+	PSieve[0]-=BASE[0];//æ’é™¤1
 	miniCOUNT--;
 	COUNT=miniCOUNT+2;
 		
@@ -83,10 +84,10 @@ unsigned char* bitSieve(int X0)
 }
 void initial()
 {
-	A0=8,  A1=16;//¶ş½×µÈ²îÊıÁĞÆğÊ¼Ïî£¬ËØpµÄÏßÉ¸´Óp^2µÄÎ»ÖÃÆğ
-	k0=32, k1=40;//¶ş½×µÈ²îÊıÁĞÒ»´Î²îÏî
-	m=3, n=7;    //½»ÌæÔö¼Ó¼ì²âÏî
-	iprime=1;    //´Ó5ÆğÉ¸
+	A0=8,  A1=16;//äºŒé˜¶ç­‰å·®æ•°åˆ—èµ·å§‹é¡¹ï¼Œç´ pçš„çº¿ç­›ä»p^2çš„ä½ç½®èµ·
+	k0=32, k1=40;//äºŒé˜¶ç­‰å·®æ•°åˆ—ä¸€æ¬¡å·®é¡¹
+	m=3, n=7;    //äº¤æ›¿å¢åŠ æ£€æµ‹é¡¹
+	iprime=1;    //ä»5èµ·ç­›
 }
 
 int main(int argc, char* argv[])
@@ -95,7 +96,7 @@ int main(int argc, char* argv[])
 	{
 		initial();
 		int X, X0;
-		//ÊäÈë¼ì²â·¶Î§£¬X<=0 ½«ÍË³ö
+		//è¾“å…¥æ£€æµ‹èŒƒå›´ï¼ŒX<=0 å°†é€€å‡º
 		cin>>X;
 		if(X<=0)break;
 		time_t st=clock();
